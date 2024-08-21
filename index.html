@@ -1,72 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>أعربلي</title>
-        <link rel="stylesheet" href="style/main.css" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Noto+Naskh+Arabic:wght@400..700&family=Rubik:ital,wght@0,800;1,800&display=swap"
-            rel="stylesheet"
-        />
-    </head>
-    <body>
-        <div id="container" class="wrapper">
-            <div class="interactor">
-                <h1 class="special">أعربلي</h1>
-                <p class="warn">
-                    لتفادي الأخطاء يرجى كتابة الجملة بلغةٍ عربيةٍ صحيحة
-                </p>
-                <input
-                    type="text"
-                    id="user_input"
-                    placeholder="اكتب أي جملة للحصول على إعرابها"
-                    class="text-input"
-                    autofocus
-                />
-                <div class="action-bar" id="actionBar">
-                    <button id="send_button" class="send-btn" title="أعرب">
-                        <div class="helper btn"><span>أعرب</span></div>
-                    </button>
-                    <div class="btn copy-btn" id="copyBtn" title="انسخ الإعراب">
-                        <i class="fas fa-copy"></i>
-                    </div>
-                </div>
-            </div>
-            <div id="response" class="response-box invisible"></div>
-            <div class="watermark">
-                <h2 class="special">أعربلي</h2>
-                <p>https://a3rbly.pplo.dev</p>
-            </div>
-            <footer>
-                <p>
-                    يمكن ل <span class="special">أعربلي</span> أن يخطئ، ليس
-                    دقيقاً بنسبة 100%
-                </p>
-                <p>
-                    تطوير
-                    <a href="https://pplo.dev" target="_blank" class="special"
-                        >يوسف ببلو</a
-                    >
-                </p>
-                <p>
-                    تطوير الواجهة
-                    <a
-                        href="mailto:albadrmohammad.dev@gmail.com"
-                        target="_blank"
-                        class="special"
-                        >البدر محمد</a
-                    >
-                </p>
-                <p class="downize">
-                    صنع في <span class="red">م</span><span>ص</span
-                    ><span class="black">ر</span>
-                </p>
-                <p class="downize">جميع الحقوق محفوظة &copy;</p>
-            </footer>
-        </div>
-        <script src="script/ui.js"></script>
-        <!-- Include the Marked library to parse markdown -->
-        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    </body>
+<html lang="ar">
+  <head>
+  <title>أعربلي</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="اعربلي بيوفرلك تحليل نحوي دقيق جداً (إعراب) لكل الجمل بالعربي، مهما كانت صعبة أو معقدة، عشان تقدر تتأكد من صحة تركيب الجملة وتفهم كل تفصيلة فيها بشكل صحيح. الموقع ده هيساعدك في معرفة إعراب أي جملة بالعربي بسهولة تامة، وده يخليك تحسن من استخدامك للغة وتكون دايماً واثق إنك بتكتب وبتحل صح ؛) . " />
+  <meta name="keywords" content="Arabic grammar, i'rab, Arabic sentences, grammatical analysis, Arabic language , i'rab , اعراب , أعراب , إعراب , اعربلي , إعربلي , أعربلي ,اعراب الجمل , اعربها , تحليل الجمل , اعربلي شكرا , موقع اعربلي  , برنامج الاعراب ,برنامج اعراب , اعرب لي اياها ,موقع اعراب الجمل فوري , موقع لاعراب الجمل , اعراب الجملة, اعرب ما تحته خط, i3rbly , a3rbly , i3rab , Arabic I3rab" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://i3rab.pplo.dev/" />
+  <meta name="author" content="Youssef pplo" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <meta property="og:title" content="اعربلي" />
+  <meta property="og:description" content="اعربلي بيوفرلك تحليل نحوي دقيق جداً (إعراب) لكل الجمل بالعربي، مهما كانت صعبة أو معقدة، عشان تقدر تتأكد من صحة تركيب الجملة وتفهم كل تفصيلة فيها بشكل صحيح. الموقع ده هيساعدك في معرفة إعراب أي جملة بالعربي بسهولة تامة، وده يخليك تحسن من استخدامك للغة وتكون دايماً واثق إنك بتكتب وبتحل صح ؛) . " />
+  <meta property="og:image" content="imgs/i3rb.png" />
+  <meta property="og:url" content="https://i3rab.pplo.dev/" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="اعربلي" />
+  <meta name="twitter:description" content="اعربلي بيوفرلك تحليل نحوي دقيق جداً (إعراب) لكل الجمل بالعربي، مهما كانت صعبة أو معقدة، عشان تقدر تتأكد من صحة تركيب الجملة وتفهم كل تفصيلة فيها بشكل صحيح. الموقع ده هيساعدك في معرفة إعراب أي جملة بالعربي بسهولة تامة، وده يخليك تحسن من استخدامك للغة وتكون دايماً واثق إنك بتكتب وبتحل صح ؛) . " />
+  <meta name="twitter:image" content="imgs/i3rb.png" />
+
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <script type="application/ld+json">
+                  {
+                      "@context": "https://schema.org",
+                      "@type": "WebSite",
+                      "name": "اعربلي",
+                      "url": "https://i3rbly.pplo.dev/",
+                      "description": "اعربلي بيوفرلك تحليل نحوي دقيق جداً (إعراب) لكل الجمل بالعربي، مهما كانت صعبة أو معقدة، عشان تقدر تتأكد من صحة تركيب الجملة وتفهم كل تفصيلة فيها بشكل صحيح. الموقع ده هيساعدك في معرفة إعراب أي جملة بالعربي بسهولة تامة، وده يخليك تحسن من استخدامك للغة وتكون دايماً واثق إنك بتكتب وبتحل صح ؛) . ",
+                      "image": "imgs/i3rb.png"
+                  }
+              </script>
+
+  <link rel="alternate" href="https://i3rbly.pplo.dev/" hreflang="ar" />
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #111;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+  font-family: Aref Ruqaa Ink, serif;
+  filter: invert(1);
+  text-shadow: 0 0 4px #d22e1f;
+    font-size: 10rem;
+    color: #ff6f61;
+    margin-bottom: 1rem;
+}
+
+
+.link {
+    font-size: 1.8rem;
+    color: #ff6f61;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+.link:hover {
+    color: #ff9671;
+}
+
+.countdown-text {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 1rem;
+}
+
+</style>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+
+  <link rel="icon" href="imgs/i3rab.ico" />
+  <link rel="stylesheet" href="style/styles.css" />
+  <link rel="stylesheet" href="style/style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اعربلي</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        let countdown = 5;
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            countdownElement.textContent = countdown;
+            countdown--;
+
+            if (countdown < 0) {
+                window.location.href = "https://i3rbly.pplo.dev";
+            } else {
+                setTimeout(updateCountdown, 1000);
+            }
+        }
+        window.onload = updateCountdown;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 style="">اعربلي</h1>
+        <a href="https://i3rbly.pplo.dev" class="link">Moved to i3rbly.pplo.dev</a>
+        <p class="countdown-text">Redirecting in <span id="countdown">5</span> seconds...</p>
+    </div>
+</body>
 </html>
